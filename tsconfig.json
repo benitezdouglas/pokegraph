@@ -16,7 +16,7 @@
       "@models": ["models"],
       "@proposals": ["proposals"],
       "@utils": ["utils"],
-      "@environments": ["environments"]
+      "@env": ["environments"]
     }
   },
   "include": ["src/**/*.ts"],
