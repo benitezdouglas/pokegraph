@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "incremental": true,
+    "paths": {
+      "@config": ["config"],
+      "@models": ["models"],
+      "@proposals": ["proposals"],
+      "@utils": ["utils"],
+      "@environments": ["environments"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/factories", "node_modules", "coverage", "dist", "**/*spec.ts"]
+}

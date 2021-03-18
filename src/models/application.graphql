@@ -1,0 +1,8 @@
+type Application {
+    name: String
+    version: String
+}
+
+type Query {
+    application: Application!
+}
