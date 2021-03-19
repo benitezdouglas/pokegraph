@@ -56,7 +56,18 @@ jobs:
           yarn install
       - name: Set up database for tests
         run: |
-          yarn run migration:run
+          yarn migration:run
+        env:
+          NODE_ENV: test
+          PGHOST: localhost
+          PGPORT: 5432
+          PGDATABASE: pokegraph
+          PGUSER: postgres
+          PGPASSWORD: postgres
+
+      - name: Seed database for tests
+        run: |
+          yarn seed:run
         env:
           NODE_ENV: test
           PGHOST: localhost
