@@ -10,10 +10,10 @@ import { NODE_ENV } from '@env';
 export class TypeormService implements TypeOrmOptionsFactory {
     async createTypeOrmOptions(): Promise<TypeOrmModuleOptions> {
         createConnection(options)
-            .then(data => {
+            .then(() => {
                 this.log(`☁️  Database connected`, true);
             })
-            .catch(err => this.log(`   Database connect error`, false));
+            .catch(() => this.log(`   Database connect error`, false));
 
         return options;
     }

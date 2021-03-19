@@ -33,4 +33,5 @@ const orm = {
     },
 };
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export default orm[NODE_ENV!];

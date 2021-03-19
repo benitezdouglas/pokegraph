@@ -85,5 +85,3 @@ jobs:
           PGDATABASE: pokegraph
           PGUSER: postgres
           PGPASSWORD: postgres
-
-        
