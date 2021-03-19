@@ -50,7 +50,7 @@ jobs:
           PGPASSWORD: 'postgres'
         run: |
           echo "Creating Postgres Database"
-          psql -h localhost -c 'create database "a-companies-test";' -U postgres
+          psql -h localhost -c 'create database "pokegraph";' -U postgres
       - name: Build
         run: |
           yarn install
