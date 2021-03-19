@@ -4,7 +4,7 @@ import { csvToJson } from "utils/csvjson.parser";
 
 export class SeedPokemon1616127138738 implements MigrationInterface {
 
-    public async up(queryRunner: QueryRunner): Promise<void> {
+    public async up(): Promise<void> {
         const pokemon = await csvToJson('pokemon.csv');
         await getRepository(Pokemon).save(pokemon);
     }
