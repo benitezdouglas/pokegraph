@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 import { GraphqlService } from 'config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeormService } from 'config/typeorm';
-import { ApplicationModule } from './modules/application/application.module';
+import { PokemonModule } from './modules/pokemon/pokemon.module';
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { ApplicationModule } from './modules/application/application.module';
     TypeOrmModule.forRootAsync({
         useClass: TypeormService,
     }),
-    ApplicationModule,
+    PokemonModule,
   ],
   controllers: [AppController],
   providers: [AppService],

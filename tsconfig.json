@@ -16,7 +16,10 @@
       "@models": ["models"],
       "@proposals": ["proposals"],
       "@utils": ["utils"],
-      "@env": ["environments"]
+      "@env": ["environments"],
+      "@modules": ["modules"],
+      "@common": ["common"],
+      "@configs": ["config"],
     }
   },
   "include": ["src/**/*.ts"],

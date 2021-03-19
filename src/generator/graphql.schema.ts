@@ -6,11 +6,13 @@
 
 /* tslint:disable */
 /* eslint-disable */
-export class Application {
+export class Pokemon {
+    id?: number;
     name?: string;
-    version?: string;
+    height?: number;
+    weight?: number;
 }
 
 export abstract class IQuery {
-    abstract application(): Application | Promise<Application>;
+    abstract pokemon(): Pokemon[] | Promise<Pokemon[]>;
 }
