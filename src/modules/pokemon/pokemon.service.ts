@@ -17,7 +17,6 @@ export class PokemonService {
                 'identifier AS name',
                 'height',
                 'weight',
-            ])
-            .getRawMany();
+            ]).getRawMany();
     }
 }
