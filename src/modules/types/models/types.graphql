@@ -1,0 +1,10 @@
+type PokeType {
+    id: Int
+    name: String
+    generation: Int
+    damageclass: Int
+}
+
+type Query {
+    pokeTypes: [PokeType]
+}

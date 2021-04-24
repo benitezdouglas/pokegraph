@@ -15,4 +15,13 @@ export class Pokemon {
 
 export abstract class IQuery {
     abstract pokemon(): Pokemon[] | Promise<Pokemon[]>;
+
+    abstract pokeTypes(): PokeType[] | Promise<PokeType[]>;
+}
+
+export class PokeType {
+    id?: number;
+    name?: string;
+    generation?: number;
+    damageclass?: number;
 }
