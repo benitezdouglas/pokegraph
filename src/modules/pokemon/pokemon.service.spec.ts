@@ -4,8 +4,11 @@ import { PokemonRepository } from './models/pokemon.repository';
 import { PokemonService } from './pokemon.service';
 import { DatabaseModule } from '../../utils/testing/database.module';
 import { Repository, SelectQueryBuilder } from 'typeorm';
+import { DatabaseController } from '../../utils/testing/database.controller';
+
 
 describe('PokemonService', () => {
+  let databaseController: DatabaseController;
   let service: PokemonService;
   let pokemonRepository: Repository<PokemonRepository>;
 
@@ -21,6 +24,7 @@ describe('PokemonService', () => {
     }).compile();
     await module.init();
 
+    databaseController = module.get<DatabaseController>(DatabaseController);
     service = module.get<PokemonService>(PokemonService);
     pokemonRepository = module.get(getRepositoryToken(PokemonRepository));
   });
@@ -36,4 +40,9 @@ describe('PokemonService', () => {
     const pokemon = await service.pokemon();
     expect(pokemon).not.toBe(null);
   });
+
+  afterAll(async () => {
+    const entities = await databaseController.getEntities();
+    await databaseController.cleanAll(entities);
+  })
 });
